@@ -11,19 +11,7 @@ import org.springframework.context.annotation.Configuration;
 public class AmqpConfig {
 
   @Bean
-  Queue articleQueue() {
-    return new Queue("articles");
-  }
-
-  @Bean
   TopicExchange exchange() {
     return new TopicExchange("articles-exchange");
-  }
-
-  @Bean
-  Binding binding(Queue queue, TopicExchange exchange) {
-    return BindingBuilder.bind(queue)
-        .to(exchange)
-        .with("article.created");
   }
 }

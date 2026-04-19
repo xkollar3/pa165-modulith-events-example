@@ -10,7 +10,14 @@ public class AmqpConfig {
 
   @Bean
   Queue articleQueue() {
-    return new Queue("articles");
+    return new Queue("article-demo1-events");
+  }
+
+  @Bean
+  Binding binding(Queue queue, TopicExchange exchange) {
+    return BindingBuilder.bind(queue)
+        .to(exchange)
+        .with("article.created");
   }
 
   @Bean
