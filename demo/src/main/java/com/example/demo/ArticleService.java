@@ -16,6 +16,8 @@ public class ArticleService {
 
   private final ApplicationEventPublisher eventPublisher;
 
+  // simply mock method here, just log and publish, in real world could also save
+  // it into DB via repository
   @Transactional
   public UUID createArticle(String content) {
     UUID id = UUID.randomUUID();
