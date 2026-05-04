@@ -20,7 +20,7 @@ public class AmqpConfig {
 
   @Bean
   Queue articleQueue() {
-    return new Queue("article-demo1-events");
+    return new Queue("articles");
   }
 
   @Bean
